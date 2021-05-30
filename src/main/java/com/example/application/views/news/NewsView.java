@@ -31,15 +31,14 @@ import com.vaadin.flow.router.RouteAlias;
 @PageTitle("News")
 public class NewsView extends HorizontalLayout {
 
-    private TextField name;
-    private Button sayHello;
+
 
     public NewsView() {
         addClassName("news-view");
 
 
 
-        HorizontalLayout layout = new HorizontalLayout();
+        VerticalLayout layout = new VerticalLayout();
         layout.setPadding(true);
 
         Component bbcColumn = bbcColumn();
@@ -61,7 +60,6 @@ public class NewsView extends HorizontalLayout {
         Document document = iterable.first();
         ArrayList bbcNews = (ArrayList) document.get("news");
         System.out.println(bbcNews);
-
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(true);
 
@@ -82,6 +80,7 @@ public class NewsView extends HorizontalLayout {
         }
         layout.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.CENTER);
         layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        iterable.cursor().close();
 
         return  layout;
     }
@@ -117,6 +116,7 @@ public class NewsView extends HorizontalLayout {
         }
         layout.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.CENTER);
         layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        iterable.cursor().close();
 
         return  layout;
     }
@@ -152,6 +152,7 @@ public class NewsView extends HorizontalLayout {
         }
         layout.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.CENTER);
         layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        iterable.cursor().close();
 
         return  layout;
     }
